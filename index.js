@@ -43,13 +43,13 @@ const contactRoute = require('./Routes/contactRoutes')
 app.use('/api/contact', contactRoute)
 
 
+app.get('/', (req, res) => res.send("Hello World"));
 
 // MongoDB connection
  const dbUsername = process.env.DB_USERNAME;
  const dbPassword = process.env.DB_PASSWORD;
 const url = `mongodb+srv://${dbUsername}:${dbPassword}@sxr-constructions.e3vyn02.mongodb.net/`
 const port = process.env.PORT || 8000;
-
 mongoose.connect(url, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
